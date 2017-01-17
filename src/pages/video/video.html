@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Video
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let video of videos">
+      <img src="http://img.youtube.com/vi/{{video.yt_id}}/mqdefault.jpg"><br>
+      {{video.ime}}
+    </ion-item>
+  </ion-list>
+</ion-content>

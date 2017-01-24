@@ -25,7 +25,10 @@ export class NovicaDetailPage {
   }
 
   play(){
-    // NativeAudio.preloadSimple('uniqueId1', this.mp3).then(function(msg){}, function(msg){ console.log(msg);});
+     console.log('play ....');
+     NativeAudio.preloadComplex('music', this.mp3, 1, 1, 0).then(function(msg){}, function(msg){ console.log(msg);});
+
+     NativeAudio.play('music').then(function(msg){}, function(msg){ console.log(msg);});
   }
 
 
@@ -34,3 +37,4 @@ export class NovicaDetailPage {
   }
 
 }
+

@@ -19,7 +19,7 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
       Splashscreen.hide();
-      /*
+      
       let push = Push.init({
         android: {
           senderID: "736255385820"
@@ -66,7 +66,7 @@ export class MyApp {
       });
       push.on('error', (e) => {
         console.log(e.message);
-    }); */
+    }); 
     });
   }
 }

@@ -1,13 +1,9 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      <img src="images/HeaderVIDEO.png" style="display:inline-block" height="120px"/>
-    </ion-title>
-  </ion-navbar>
-</ion-header>
 
 <ion-content>
-  
+  <div class="header" text-center>
+    <img src="../assets/images/HeaderVIDEO.png" alt="Videoprodukcija Narodnjak" class="header-img">
+  </div>
+
   <ion-list>
     <ion-item *ngFor="let video of videos">
       <img src="http://img.youtube.com/vi/{{video.yt_id}}/mqdefault.jpg"><br>

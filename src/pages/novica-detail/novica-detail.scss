@@ -1,8 +1,14 @@
 page-novica-detail {
 
-}
+  h1{
+    margin:20px;
+  }
 
+  p{
+    line-height: 1.8em;
+  }
 
-page-novica-detail p{
-  line-height: 1.8em;
+  img{
+    box-shadow: 0 0 10px #000;
+  }
 }

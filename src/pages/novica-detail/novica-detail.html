@@ -13,9 +13,10 @@
 </ion-header>
 
 
-<ion-content padding>
- 
-  <img src="{{novica.slika}}" alt="Slika"> 
-  <div [innerHTML]="novica.vsebina"></div>
+<ion-content>
+  
+  <img [src]="novica.slika" alt="Slika"> 
+  <h1>{{novica.naslov}}</h1>
+  <div [innerHTML]="novica.vsebina" padding></div>
   
 </ion-content>

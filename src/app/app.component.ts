@@ -20,6 +20,8 @@ export class MyApp {
       StatusBar.styleDefault();
       Splashscreen.hide();
       
+      // ---------| PUSH Notifications (comment on ) |--------------------------------------------
+      
       let push = Push.init({
         android: {
           senderID: "736255385820"
@@ -38,21 +40,21 @@ export class MyApp {
       });
       push.on('notification', (data) => {
         console.log('message', data.message);
-        let self = this;
+        
         //if user using app and push notification comes
         if (data.additionalData.foreground) {
           // if application open, show popup
           let confirmAlert = this.alertCtrl.create({
-            title: 'New Notification',
+            title: 'Novo obvestilo',
             message: data.message,
             buttons: [{
-              text: 'Ignore',
+              text: 'Prezri',
               role: 'cancel'
             }, {
-              text: 'View',
+              text: 'Pokaži',
               handler: () => {
                 //TODO: Your logic here
-                self.nav.push(DetailsPage, {message: data.message});
+                this.nav.push(DetailsPage, {message: data.message});
               }
             }]
           });
@@ -60,13 +62,15 @@ export class MyApp {
         } else {
           //if user NOT using app and push notification comes
           //TODO: Your logic on click of push notification directly
-          self.nav.push(DetailsPage, {message: data.message});
+          this.nav.push(DetailsPage, {message: data.message});
           console.log("Push notification clicked");
         }
       });
       push.on('error', (e) => {
         console.log(e.message);
-    }); 
+      }); 
+      
+      // --------------------------------------------
     });
   }
 }

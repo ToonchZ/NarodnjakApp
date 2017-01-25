@@ -14,7 +14,10 @@ import { NavController, NavParams } from 'ionic-angular';
 export class DetailsPage {
 
   message: string;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+    this.message = navParams.get('message');
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailsPage');

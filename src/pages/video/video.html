@@ -1,11 +1,11 @@
 
 <ion-content>
   <div class="header" text-center>
-    <img src="../assets/images/HeaderVIDEO.png" alt="Videoprodukcija Narodnjak" class="header-img">
+    <img src="assets/img/HeaderVIDEO.png" alt="Videoprodukcija Narodnjak" class="header-img">
   </div>
 
   <ion-list>
-    <ion-item *ngFor="let video of videos">
+    <ion-item *ngFor="let video of videos" text-center>
       <img src="http://img.youtube.com/vi/{{video.yt_id}}/mqdefault.jpg"><br>
       {{video.ime}}
     </ion-item>

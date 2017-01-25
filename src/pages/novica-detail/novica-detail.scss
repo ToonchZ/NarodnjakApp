@@ -1,7 +1,7 @@
 page-novica-detail {
 
   h1{
-    margin:20px;
+    color: #900;
   }
 
   p{
@@ -10,5 +10,10 @@ page-novica-detail {
 
   img{
     box-shadow: 0 0 10px #000;
+  }
+
+  p.datum{
+    color: #999;
+    margin-bottom: 0;
   }
 }

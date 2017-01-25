@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-import {NativeAudio} from 'ionic-native';
+import { MediaPlugin } from 'ionic-native';
 
 /*
   Generated class for the NovicaDetail page.
@@ -16,21 +16,28 @@ import {NativeAudio} from 'ionic-native';
 export class NovicaDetailPage {
 
   novica: any;
-  mp3: string;
+  player: any;
+  showPlayer: boolean = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   
     this.novica = navParams.get('novica');
-    this.mp3 = "http://www.narodnjak.si/priponke/6557/Me_tri_do_polnoci___Nasmeh_ne_gre_nikoli_iz_mode.mp3";
+    
+    if(this.novica.mp3 != ''){
+      const onStatusUpdate = (status) => console.log(status);
+    
+      this.player = new MediaPlugin(this.novica.mp3, onStatusUpdate);
+      this.showPlayer = true;
+    }
   }
 
   play(){
-     console.log('play ....');
-     NativeAudio.preloadComplex('music', this.mp3, 1, 1, 0).then(function(msg){}, function(msg){ console.log(msg);});
-
-     NativeAudio.play('music').then(function(msg){}, function(msg){ console.log(msg);});
+    this.player.play();
   }
 
+  pause(){
+    this.player.pause();
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NovicaDetailPage');

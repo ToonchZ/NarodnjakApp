@@ -12,7 +12,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage = TabsPage;
-
+ 
   constructor(platform: Platform, public alertCtrl: AlertController) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -21,8 +21,8 @@ export class MyApp {
       Splashscreen.hide();
       
       // ---------| PUSH Notifications (comment on ) |--------------------------------------------
-      
-      let push = Push.init({
+      /*
+      var push = Push.init({
         android: {
           senderID: "736255385820"
         },
@@ -35,8 +35,11 @@ export class MyApp {
       });
 
       push.on('registration', (data) => {
-        console.log("device token ->", data.registrationId);
-        //TODO - send device token to server
+        if (data) {
+          console.log(data.registrationId);
+        } else {
+          console.log('No data returned.');
+        }
       });
       push.on('notification', (data) => {
         console.log('message', data.message);
@@ -69,7 +72,7 @@ export class MyApp {
       push.on('error', (e) => {
         console.log(e.message);
       }); 
-      
+      */
       // --------------------------------------------
     });
   }

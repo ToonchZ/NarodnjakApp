@@ -17,8 +17,8 @@ export class NovicaDetailPage {
 
   novica: any;
   track: any;
-  showPlayer: boolean = false;
 
+  showPlayer: boolean = false;
   trackDuration: number;
   trackProgress: number;
   trackStatus: number;
@@ -29,6 +29,8 @@ export class NovicaDetailPage {
     this.novica = navParams.get('novica');
     this.trackProgress = 0;
     this.trackDuration = 0;
+    this.trackStatus = 0;
+
 
     if(this.novica.mp3 != ''){
       const onStatusUpdate = (status) => this.trackStatus = status;
@@ -63,6 +65,10 @@ export class NovicaDetailPage {
   }
 
   pause(){
+    // posnetek ustavi samo če se predvaja
+    if(this.trackStatus != 2){
+      return;
+    }
     this.track.pause();
     clearInterval(this.playing);
   }
@@ -84,9 +90,21 @@ export class NovicaDetailPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad NovicaDetailPage');
+    //console.log('ionViewDidLoad NovicaDetailPage');
   }
 
+  ionViewWillLeave() {
+    
+    if(this.trackStatus > 0){
+      this.track.stop();
+      this.track.release();
+      console.log('audio released.');
+    }
+    else{
+
+      console.log('ni audio posnetka.');
+    }
+  }
   
 }
 

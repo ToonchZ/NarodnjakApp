@@ -11,24 +11,35 @@
   </ion-navbar>
 
 </ion-header>
- 
+
 
 <ion-content>
   
   <img [src]="novica.slika" alt="Slika"> 
   <div padding>
     <h1>{{novica.naslov}}</h1>
-    <p class="datum">{{novica.datum_objave}}</p>
-    {{trackProgress}} => {{trackDuration}} ({{trackStatus}})
-    <div *ngIf="showPlayer" text-center>
-      <button ion-button (click)="play()"><ion-icon name="play"></ion-icon></button>
-      <button ion-button (click)="pause()"><ion-icon name="pause"></ion-icon></button>
-      <ion-item>
-        <ion-range [(ngModel)]="trackProgress" min="0" max="{{trackDuration}}" (ionChange)="seek()">
-          
-        </ion-range>
-      </ion-item>
-    </div>
+    
+    <ion-grid>
+      <ion-row>
+        <ion-col width-50 class="datum">{{novica.datum_objave}}</ion-col>
+        <ion-col width-50 text-right><ion-badge color="secondary">{{novica.rubrika}}</ion-badge></ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-card *ngIf="showPlayer">
+      <ion-card-content text-center>
+        
+        <button ion-button (click)="play()"><ion-icon name="play"></ion-icon></button>
+        <button ion-button (click)="pause()"><ion-icon name="pause"></ion-icon></button>
+
+        <!-- {{trackProgress}} => {{trackDuration}} ({{trackStatus}}) -->
+
+        <ion-item>
+          <ion-range [(ngModel)]="trackProgress" min="0" max="{{trackDuration}}" (ionChange)="seek()">
+          </ion-range>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
 
     <div [innerHTML]="novica.vsebina" ></div>
     

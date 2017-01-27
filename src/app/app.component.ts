@@ -21,7 +21,7 @@ export class MyApp {
       Splashscreen.hide();
       
       // ---------| PUSH Notifications (comment on ) |--------------------------------------------
-      /*
+      
       var push = Push.init({
         android: {
           senderID: "736255385820"
@@ -72,7 +72,7 @@ export class MyApp {
       push.on('error', (e) => {
         console.log(e.message);
       }); 
-      */
+      
       // --------------------------------------------
     });
   }

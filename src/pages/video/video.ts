@@ -22,9 +22,9 @@ export class VideoPage {
   
   public getFeed( ){
 
-    this.presentLoading();
+    this.presentLoading(); 
 
-    this.url = "http://www.narodnjak.si/feed.php";
+    this.url = "http://www.narodnjak.tv/feed/video";
     
     this.http.get(this.url).map(res => res.json()).subscribe(
       data => {

@@ -1,0 +1,6 @@
+za napakako:
+events.js:160
+throw er; // Unhandled 'error' event
+
+zaženi v terminalu:
+taskkill /f /im node*

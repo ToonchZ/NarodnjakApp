@@ -42,9 +42,9 @@ export class HomePage {
         //console.log(this.posts);
       },
       err => {
-        console.log("Napaka pri prenosu vsebine.");
-        console.log("Napaka pri prenosu vsebine.");
         this.loading.dismiss();
+        console.log("Napaka pri prenosu vsebine.");
+        alert("Napaka pri prenosu vsebine. Preverite spletno povezavo.");
       }
     );
   }

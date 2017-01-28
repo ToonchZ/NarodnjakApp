@@ -1,11 +1,10 @@
 page-video {
 
-}
+  ion-item img{
+      box-shadow: 0 0 5px #aaa;
+  }
 
-page-video .header{
-  text-align: center;
-}
-
-.toolbar-md{
-  padding: 0;
+  .header{
+    text-align: center;
+  }
 }

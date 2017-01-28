@@ -4,6 +4,8 @@ import 'rxjs/add/operator/map';
 
 import { NavController, LoadingController } from 'ionic-angular';
 
+import { FbDetailsPage } from '../fb-details/fb-details'
+
 @Component({
   selector: 'page-fb',
   templateUrl: 'fb.html'
@@ -47,4 +49,7 @@ export class FBPage {
 
   }
 
+  public itemSelected(post){
+    this.navCtrl.push(FbDetailsPage, {post});
+  }
 }

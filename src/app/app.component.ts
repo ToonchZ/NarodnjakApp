@@ -20,6 +20,9 @@ export class MyApp {
       StatusBar.styleDefault();
       Splashscreen.hide();
       
+      // ----------- youtube video api
+      var tag = document.createElement('script');
+
       // ---------| PUSH Notifications (comment on ) |--------------------------------------------
       
       var push = Push.init({

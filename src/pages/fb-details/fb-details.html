@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{post.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  
+  <img [src]="post.full_picture" alt="Slika"> 
+  <div padding>
+    <h1>{{post.name}}</h1>
+    
+    <ion-col width-50 class="datum">{{post.created_time | date:'d. M. y'}}</ion-col>
+    
+    <div [innerHTML]="post.message" ></div>
+    
+  </div>
+</ion-content>

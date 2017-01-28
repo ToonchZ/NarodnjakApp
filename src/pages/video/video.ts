@@ -3,6 +3,8 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 import { NavController, LoadingController } from 'ionic-angular';
+import { VideoPlayerPage } from '../video-player/video-player';
+
 
 @Component({
   selector: 'page-video',
@@ -13,6 +15,7 @@ export class VideoPage {
   videos: any;
   url: any;
   
+
   loading: any;
 
   constructor(public navCtrl: NavController, public http: Http, public loadingCtrl: LoadingController) {
@@ -48,4 +51,10 @@ export class VideoPage {
 
   }
 
+  playVideo(video){
+    this.navCtrl.push(VideoPlayerPage, {video});
+    
+    /*let videoPlayer = this.modalCtrl.create(VideoPlayerPage, {video});
+    videoPlayer.present();*/
+  }
 }

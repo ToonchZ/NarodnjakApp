@@ -1,0 +1,21 @@
+<!--
+  Generated template for the VideoPlayer page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{video.naslov}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content style="background-color: #000;">
+  
+      <iframe allowfullscreen frameborder="0" height="100%" width="100%" [src]="video.yt_id | safe:'resourceUrl'">
+      </iframe>
+    
+</ion-content>

@@ -1,11 +1,8 @@
 import { Injectable, Pipe } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
 
 /*
-  Generated class for the Safe pipe.
-
-  See https://angular.io/docs/ts/latest/guide/pipes.html for more info on
-  Angular 2 Pipes.
+  SafeResourceUrl
 */
 @Pipe({
   name: 'safe'

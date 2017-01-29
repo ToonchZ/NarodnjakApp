@@ -20,20 +20,25 @@
 
     <ion-card *ngIf="showPlayer">
       <ion-card-content text-center>
-        
-        <button ion-button (click)="play()"><ion-icon name="play"></ion-icon></button>
-        <button ion-button (click)="pause()"><ion-icon name="pause"></ion-icon></button>
-
         <!-- {{trackProgress}} => {{trackDuration}} ({{trackStatus}}) -->
 
         <ion-item>
           <ion-range [(ngModel)]="trackProgress" min="0" max="{{trackDuration}}" (ionChange)="seek()">
+            <button ion-button (click)="togglePlay()" range-left style="margin-right: 30px;">
+              <ion-icon name="play" *ngIf="!isPlaying"></ion-icon>
+              <ion-icon name="pause" *ngIf="isPlaying"></ion-icon>
+            </button>
           </ion-range>
         </ion-item>
       </ion-card-content>
     </ion-card>
 
     <div [innerHTML]="novica.vsebina" ></div>
-    
+
+    <div class="videoWrapper" *ngIf="showVideo">
+      <iframe allowfullscreen frameborder="0" height="100%" width="100%" [src]="novica.video_id | safe:'resourceUrl'">
+      </iframe>
+    </div>
+
   </div>
 </ion-content>

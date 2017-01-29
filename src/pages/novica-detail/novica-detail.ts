@@ -23,6 +23,9 @@ export class NovicaDetailPage {
   trackProgress: number;
   trackStatus: number;
   playing: any;
+  isPlaying: boolean;
+
+  showVideo: boolean = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   
@@ -30,7 +33,7 @@ export class NovicaDetailPage {
     this.trackProgress = 0;
     this.trackDuration = 0;
     this.trackStatus = 0;
-
+    this.isPlaying = false;
 
     if(this.novica.mp3 != ''){
       const onStatusUpdate = (status) => this.trackStatus = status;
@@ -49,6 +52,19 @@ export class NovicaDetailPage {
       
       this.trackDuration = this.track.getDuration();
     }
+
+    if(this.novica.video_id != ''){
+      this.showVideo = true;
+    }
+  }
+
+  togglePlay(){
+    if(this.isPlaying){
+      this.pause();
+    }
+    else{
+      this.play();
+    }
   }
 
   play(){
@@ -58,7 +74,8 @@ export class NovicaDetailPage {
     }
 
     this.track.play();
-    
+
+    this.isPlaying = true;
     this.playing = setInterval(()=> {
       this.updateSlider();
     }, 1000);
@@ -70,6 +87,7 @@ export class NovicaDetailPage {
       return;
     }
     this.track.pause();
+    this.isPlaying = false;
     clearInterval(this.playing);
   }
 

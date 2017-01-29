@@ -25,7 +25,7 @@ export class MyApp {
       
       var push = Push.init({
         android: {
-          senderID: "736255385820"
+          senderID: "533594488545"
         },
         ios: {
           alert: "true",

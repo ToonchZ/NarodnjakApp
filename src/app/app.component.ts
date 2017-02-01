@@ -1,9 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
 import { Platform, Nav, AlertController } from 'ionic-angular';
-import { StatusBar, Splashscreen, Push } from 'ionic-native';
+import { StatusBar, Splashscreen} from 'ionic-native'; //, Push 
 
 import { TabsPage } from '../pages/tabs/tabs';
-import {DetailsPage} from "../pages/details/details";
+//import {DetailsPage} from "../pages/details/details";
 
 @Component({
   templateUrl: 'app.html'
@@ -22,7 +22,7 @@ export class MyApp {
       
 
       // ---------| PUSH Notifications (comment on ) |--------------------------------------------
-      
+      /*
       var push = Push.init({
         android: {
           senderID: "533594488545"
@@ -73,7 +73,7 @@ export class MyApp {
       push.on('error', (e) => {
         console.log(e.message);
       }); 
-      
+      */
       // --------------------------------------------
     });
   }
